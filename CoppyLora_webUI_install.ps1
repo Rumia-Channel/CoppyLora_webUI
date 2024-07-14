@@ -2,11 +2,11 @@ Set-Location $PSScriptRoot
 
 $Env:PIP_DISABLE_PIP_VERSION_CHECK = 1
 
-if (!(Test-Path -Path "venv")) {
+if (!(Test-Path -Path ".venv")) {
     Write-Output "Creating Python virtual environment..."
-    python -m venv venv
+    python -m venv .venv
 }
-.\venv\Scripts\Activate.ps1
+.\.venv\Scripts\Activate.ps1
 
 python.exe -m pip install --upgrade pip
 
